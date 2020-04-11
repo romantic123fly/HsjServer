@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30002.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HsjServer", "HsjServer\HsjServer.csproj", "{3BC76B0A-1E16-4E01-B68A-B5D4CE96C4E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerBase", "ServerBase\ServerBase.csproj", "{91AB2993-B980-4238-8077-D21B02208FB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3BC76B0A-1E16-4E01-B68A-B5D4CE96C4E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BC76B0A-1E16-4E01-B68A-B5D4CE96C4E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BC76B0A-1E16-4E01-B68A-B5D4CE96C4E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BC76B0A-1E16-4E01-B68A-B5D4CE96C4E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91AB2993-B980-4238-8077-D21B02208FB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91AB2993-B980-4238-8077-D21B02208FB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91AB2993-B980-4238-8077-D21B02208FB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91AB2993-B980-4238-8077-D21B02208FB0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8ED831DB-59AB-4A46-855D-51EF1CB1CB77}
+	EndGlobalSection
+EndGlobal

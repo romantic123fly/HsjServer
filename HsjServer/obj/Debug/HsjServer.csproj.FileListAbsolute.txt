@@ -1,0 +1,14 @@
+F:\GitHubProject\HsjServer\HsjServer\bin\Debug\HsjServer.exe.config
+F:\GitHubProject\HsjServer\HsjServer\bin\Debug\HsjServer.exe
+F:\GitHubProject\HsjServer\HsjServer\bin\Debug\HsjServer.pdb
+F:\GitHubProject\HsjServer\HsjServer\bin\Debug\ServerBase.exe
+F:\GitHubProject\HsjServer\HsjServer\bin\Debug\log4net.dll
+F:\GitHubProject\HsjServer\HsjServer\bin\Debug\ServerBase.pdb
+F:\GitHubProject\HsjServer\HsjServer\bin\Debug\ServerBase.exe.config
+F:\GitHubProject\HsjServer\HsjServer\bin\Debug\log4net.xml
+F:\GitHubProject\HsjServer\HsjServer\obj\Debug\HsjServer.csprojAssemblyReference.cache
+F:\GitHubProject\HsjServer\HsjServer\obj\Debug\HsjServer.csproj.CoreCompileInputs.cache
+F:\GitHubProject\HsjServer\HsjServer\obj\Debug\HsjServer.csproj.CopyComplete
+F:\GitHubProject\HsjServer\HsjServer\obj\Debug\HsjServer.exe
+F:\GitHubProject\HsjServer\HsjServer\obj\Debug\HsjServer.pdb
+F:\GitHubProject\HsjServer\HsjServer\bin\Debug\log4net.config
