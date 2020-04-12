@@ -10,5 +10,8 @@ namespace HsjServer.Net
     public class ClientSocket
     {
         public Socket Socket { get; set; }
+        public long LastPingTime { get; set; }
+        public ByteArray Readbuff = new ByteArray();
+
     }
 }
