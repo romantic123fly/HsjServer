@@ -9,28 +9,28 @@ namespace HsjServer.Net
     public class ByteArray
     {
         //默认大小
-        public const int DefaultSize = 1024;
+        public const int DEFAULT_SIZE = 1024;
         //初始大小
         public int initSize = 0;
         //缓冲区
         public byte[] Bytes;
         //读写位置
-        public int startIndex = 0;
-        public int endIndex = 0;
+        public int ReadIdx = 0;
+        public int WriteIdx = 0;
         //容量
         private int capacity = 0;
         //剩余空间
-        public int freeSpace { get { return capacity - endIndex; } }
+        public int Remain { get { return capacity - WriteIdx; } }
         //数据长度
-        public int Length { get { return endIndex - startIndex; } }
+        public int Length { get { return WriteIdx - ReadIdx; } }
 
         public ByteArray()
         {
-            Bytes = new byte[DefaultSize];
-            capacity = DefaultSize;
-            initSize = DefaultSize;
-            startIndex = 0;
-            endIndex = 0;
+            Bytes = new byte[DEFAULT_SIZE];
+            capacity = DEFAULT_SIZE;
+            initSize = DEFAULT_SIZE;
+            ReadIdx = 0;
+            WriteIdx = 0;
         }
         //检测并移动数据
         public void CheckAndMoveBytes()
@@ -42,8 +42,8 @@ namespace HsjServer.Net
         }
         public void MoveBytes()
         {
-            Array.Copy(Bytes, startIndex, Bytes, 0, Length);
-            endIndex = Length; startIndex = 0;
+            Array.Copy(Bytes, ReadIdx, Bytes, 0, Length);
+            WriteIdx = Length; ReadIdx = 0;
 
         }
 
@@ -53,9 +53,9 @@ namespace HsjServer.Net
             while (size > a) a *= 2;
             capacity = a;
             byte[] newBytes = new byte[capacity];
-            Array.Copy(Bytes, startIndex, newBytes, 0, Length);
+            Array.Copy(Bytes, ReadIdx, newBytes, 0, Length);
             Bytes = newBytes;
-            endIndex = Length; startIndex = 0;
+            WriteIdx = Length; ReadIdx = 0;
         }
     }
 }

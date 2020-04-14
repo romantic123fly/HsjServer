@@ -12,3 +12,5 @@ F:\GitHubProject\HsjServer\HsjServer\obj\Debug\HsjServer.csproj.CopyComplete
 F:\GitHubProject\HsjServer\HsjServer\obj\Debug\HsjServer.exe
 F:\GitHubProject\HsjServer\HsjServer\obj\Debug\HsjServer.pdb
 F:\GitHubProject\HsjServer\HsjServer\bin\Debug\log4net.config
+F:\GitHubProject\HsjServer\HsjServer\bin\Debug\protobuf-net.dll
+F:\GitHubProject\HsjServer\HsjServer\bin\Debug\protobuf-net.xml
