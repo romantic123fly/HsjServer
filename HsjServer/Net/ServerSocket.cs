@@ -11,31 +11,19 @@ namespace HsjServer.Net
 {
     public class ServerSocket : Singleton<ServerSocket>
     {
-        //公钥
-        public static string PublicKey = "OceanSever";
-        //密钥，后续可以随时间进行变化
-        public static string SecretKey = "Ocean_Up&&NB!!";
-
+        public static string PublicKey = "OceanSever"; //公钥
+        public static string SecretKey = "Ocean_Up&&NB!!";   //密钥，后续可以随时间进行变化
 #if DEBUG
         private string m_IpStr = "127.0.0.1";
 #else
-        //对应阿里云或腾讯云的 本地ip地址（不是公共ip地址）
-        private string m_IpStr = "172.45.756.54";
+        private string m_IpStr = "172.45.756.54"; //对应阿里云或腾讯云的 本地ip地址（不是公共ip地址）
 #endif
         private const int m_Port = 8011;
-
-        public static long m_PingInterval = 10;
-
-        //服务器监听socket
-        private static Socket m_ListenSocket;
-
-        //临时保存所有socket的集合
-        private static List<Socket> m_CheckReadList = new List<Socket>();
-
-        //所有客户端的一个字典
-        public static Dictionary<Socket, ClientSocket> m_ClientDic = new Dictionary<Socket, ClientSocket>();
-
-        public static List<ClientSocket> m_TempList = new List<ClientSocket>();
+        public static long m_PingInterval = 60;
+        private static Socket m_ListenSocket; //服务器监听socket
+        public static Dictionary<Socket, ClientSocket> m_ClientDic = new Dictionary<Socket, ClientSocket>();//所有链接客户端的一个字典
+        private static List<Socket> m_CheckReadList = new List<Socket>();//保存所有socket的集合
+        public static List<ClientSocket> m_TempList = new List<ClientSocket>();//临时存储断线的客户端
 
         public void Init()
         {
@@ -44,73 +32,57 @@ namespace HsjServer.Net
             m_ListenSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             m_ListenSocket.Bind(ipEndPoint);
             m_ListenSocket.Listen(50000);
+            Debug.LogInfo("服务器{0}启动监听成功", m_ListenSocket.LocalEndPoint.ToString());
 
-            Debug.LogInfo("服务器启动监听{0}成功", m_ListenSocket.LocalEndPoint.ToString());
+            StartCheckReceiveClient();
+        }
 
+        private void StartCheckReceiveClient()
+        {
             while (true)
             {
-                //检查是否有读取的socket
-
-                //处理找出所有socket
-                ResetCheckRead();
-
-                try
+                m_CheckReadList.Clear();
+                m_CheckReadList.Add(m_ListenSocket);
+                foreach (Socket s in m_ClientDic.Keys)
                 {
-                    //最后等待时间单位是微妙
-                    Socket.Select(m_CheckReadList, null, null, 1000);
+                    m_CheckReadList.Add(s);
                 }
-                catch (Exception e)
-                {
-                    Debug.LogError(e);
-                }
-
+                //多路复用模式
+                try { Socket.Select(m_CheckReadList, null, null, 1000); }
+                catch (Exception e) { Debug.LogError(e.Message); }
                 for (int i = m_CheckReadList.Count - 1; i >= 0; i--)
                 {
                     Socket s = m_CheckReadList[i];
                     if (s == m_ListenSocket)
-                    {
-                        //说明有客户端链接到服务器了，所以服务器socket可读
-                        ReadListen(s);
-                    }
+                        ReadListen(s);//存储当前客户端
                     else
-                    {
-                        //说明链接的客户端可读，证明有信息传上来了
-                        ReadClient(s);
-                    }
+                        ReadClientMessage(s); //说明链接的客户端可读，有信息传上来了
                 }
-
-                //检测是否心跳包超时的计算
-
-
-                long timeNow = GetTimeStamp();
-                m_TempList.Clear();
-                foreach (ClientSocket clientSocket in m_ClientDic.Values)
-                {
-                    if (timeNow - clientSocket.LastPingTime > m_PingInterval * 4)
-                    {
-                        Debug.Log("Ping Close" + clientSocket.Socket.RemoteEndPoint.ToString());
-                        m_TempList.Add(clientSocket);
-                    }
-                }
-
-                foreach (ClientSocket clientSocket in m_TempList)
-                {
-                    CloseClient(clientSocket);
-                }
-                m_TempList.Clear();
+                //CheckHeart();
             }
         }
 
-        public void ResetCheckRead()
+        //检测是否心跳包超时的计算
+        private void CheckHeart()
         {
-            m_CheckReadList.Clear();
-            m_CheckReadList.Add(m_ListenSocket);
-            foreach (Socket s in m_ClientDic.Keys)
+            m_TempList.Clear();
+            foreach (ClientSocket clientSocket in m_ClientDic.Values)
             {
-                m_CheckReadList.Add(s);
+                if (GetTimeStamp() - clientSocket.LastPingTime > m_PingInterval * 4)
+                {
+                    Debug.Log("Ping Close" + clientSocket.Socket.RemoteEndPoint.ToString());
+                    m_TempList.Add(clientSocket);
+                }
+            }
+            foreach (ClientSocket clientSocket in m_TempList)
+            {
+                CloseClient(clientSocket);
             }
         }
-
+        /// <summary>
+        /// 获取链接的客户端加入管理
+        /// </summary>
+        /// <param name="listen">监听Socket</param>
         void ReadListen(Socket listen)
         {
             try
@@ -127,12 +99,15 @@ namespace HsjServer.Net
                 Debug.LogError("Accept fali:" + ex.ToString());
             }
         }
-
-        void ReadClient(Socket client)
+        /// <summary>
+        ///接收到客户端消息
+        /// </summary>
+        /// <param name="client"></param>
+        void ReadClientMessage(Socket client)
         {
             ClientSocket clientSocket = m_ClientDic[client];
             ByteArray readBuff = clientSocket.ReadBuff;
-            //接受信息，根据信息解析协议，根据协议内容处理消息再下发到客户端
+            
             int count = 0;
             //如果上一次接收数据刚好占满了1024的数组，
             if (readBuff.Remain <= 0)
@@ -147,9 +122,15 @@ namespace HsjServer.Net
                     readBuff.ReSize(expandSize * 2);
                 }
             }
+
             try
             {
                 count = client.Receive(readBuff.Bytes, readBuff.WriteIdx, readBuff.Remain, 0);
+                if (count <= 0) //代表客户端断开链接了
+                {
+                    CloseClient(clientSocket);
+                    return;
+                }
             }
             catch (SocketException ex)
             {
@@ -157,22 +138,14 @@ namespace HsjServer.Net
                 CloseClient(clientSocket);
                 return;
             }
-
-            //代表客户端断开链接了
-            if (count <= 0)
-            {
-                CloseClient(clientSocket);
-                return;
-            }
-
+          
             readBuff.WriteIdx += count;
-            //解析我们的信息
             OnReceiveData(clientSocket);
             readBuff.CheckAndMoveBytes();
         }
 
         /// <summary>
-        /// 接收数据处理
+        /// 接收数据处理，根据信息解析协议，根据协议内容处理消息再下发到客户端
         /// </summary>
         /// <param name="clientSocket"></param>
         void OnReceiveData(ClientSocket clientSocket)
@@ -194,6 +167,7 @@ namespace HsjServer.Net
             readbuff.ReadIdx += 4;
             //解析协议名
             int nameCount = 0;
+           
             ProtocolEnum proto = ProtocolEnum.None;
             try
             {

@@ -36,7 +36,7 @@ public class MsgBase
     {
         count = 0;
         if (offset + 2 > bytes.Length) return ProtocolEnum.None;
-        Int16 len = (Int16)((bytes[offset + 1] << 8) | bytes[offset]);
+        Int16 len = (Int16)bytes[offset];
         if (offset + 2 + len > bytes.Length) return ProtocolEnum.None;
         count = 2 + len;
         try
