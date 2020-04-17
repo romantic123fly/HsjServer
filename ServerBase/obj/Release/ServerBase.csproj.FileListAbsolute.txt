@@ -1,0 +1,11 @@
+F:\GitHubProject\HsjServer\ServerBase\bin\Release\log4net.config
+F:\GitHubProject\HsjServer\ServerBase\bin\Release\ServerBase.exe.config
+F:\GitHubProject\HsjServer\ServerBase\bin\Release\ServerBase.exe
+F:\GitHubProject\HsjServer\ServerBase\bin\Release\ServerBase.pdb
+F:\GitHubProject\HsjServer\ServerBase\bin\Release\log4net.dll
+F:\GitHubProject\HsjServer\ServerBase\bin\Release\log4net.xml
+F:\GitHubProject\HsjServer\ServerBase\obj\Release\ServerBase.csprojAssemblyReference.cache
+F:\GitHubProject\HsjServer\ServerBase\obj\Release\ServerBase.csproj.CoreCompileInputs.cache
+F:\GitHubProject\HsjServer\ServerBase\obj\Release\ServerBase.csproj.CopyComplete
+F:\GitHubProject\HsjServer\ServerBase\obj\Release\ServerBase.exe
+F:\GitHubProject\HsjServer\ServerBase\obj\Release\ServerBase.pdb

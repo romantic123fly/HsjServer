@@ -20,9 +20,12 @@ public class MsgBase
     {
         byte[] nameBytes = System.Text.Encoding.UTF8.GetBytes(msgBase.ProtoType.ToString());
         Int16 len = (Int16)nameBytes.Length;
+        //定义新的字节数组存储前两位存储协议名长度，后面存储协议名字节内容
         byte[] bytes = new byte[2 + len];
+        //协议名的长度占两个字节
         bytes[0] = (byte)(len % 256);
         bytes[1] = (byte)(len / 256);
+        //把协议名长度和协议名内容拼起来
         Array.Copy(nameBytes, 0, bytes, 2, len);
         return bytes;
     }
@@ -32,16 +35,11 @@ public class MsgBase
     /// </summary>
     /// <param name="bytes"></param>
     /// <returns></returns>
-    public static ProtocolEnum DecodeName(byte[] bytes, int offset, out int count) 
+    public static ProtocolEnum DecodeName(byte[] bytes) 
     {
-        count = 0;
-        if (offset + 2 > bytes.Length) return ProtocolEnum.None;
-        Int16 len = (Int16)bytes[offset];
-        if (offset + 2 + len > bytes.Length) return ProtocolEnum.None;
-        count = 2 + len;
         try
         {
-            string name = System.Text.Encoding.UTF8.GetString(bytes, offset + 2, len);
+            string name = System.Text.Encoding.UTF8.GetString(bytes,6, bytes[4]);
             return (ProtocolEnum)System.Enum.Parse(typeof(ProtocolEnum), name);
         }
         catch (Exception ex) 
@@ -82,18 +80,12 @@ public class MsgBase
     /// <param name="offset"></param>
     /// <param name="count"></param>
     /// <returns></returns>
-    public static MsgBase Decode(ProtocolEnum protocol, byte[] bytes, int offset, int count) 
+    public static MsgBase Decode(ProtocolEnum protocol, byte[] bytes, int count) 
     {
-        if (count <= 0)
-        {
-            Debug.LogError("协议解密出错，数据长度为0");
-            return null;
-        }
-
         try
         {
             byte[] newBytes = new byte[count];
-            Array.Copy(bytes, offset, newBytes, 0, count);
+            Array.Copy(bytes, 6 + bytes[4], newBytes, 0, count);
             string secret = ServerSocket.SecretKey;
             if (protocol == ProtocolEnum.MsgSecret) 
             {

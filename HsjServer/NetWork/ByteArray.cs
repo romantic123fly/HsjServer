@@ -37,15 +37,11 @@ namespace HsjServer.Net
         {
             if (Length < 8)
             {
-                MoveBytes();
+                Array.Copy(Bytes, ReadIdx, Bytes, 0, Length);
+                WriteIdx = Length; ReadIdx = 0;
             }
         }
-        public void MoveBytes()
-        {
-            Array.Copy(Bytes, ReadIdx, Bytes, 0, Length);
-            WriteIdx = Length; ReadIdx = 0;
 
-        }
 
         public void ReSize(int size)
         {

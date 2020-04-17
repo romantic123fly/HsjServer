@@ -1,0 +1,16 @@
+F:\GitHubProject\HsjServer\HsjServer\bin\Release\log4net.config
+F:\GitHubProject\HsjServer\HsjServer\bin\Release\HsjServer.exe.config
+F:\GitHubProject\HsjServer\HsjServer\bin\Release\HsjServer.exe
+F:\GitHubProject\HsjServer\HsjServer\bin\Release\HsjServer.pdb
+F:\GitHubProject\HsjServer\HsjServer\bin\Release\protobuf-net.dll
+F:\GitHubProject\HsjServer\HsjServer\bin\Release\ServerBase.exe
+F:\GitHubProject\HsjServer\HsjServer\bin\Release\log4net.dll
+F:\GitHubProject\HsjServer\HsjServer\bin\Release\ServerBase.pdb
+F:\GitHubProject\HsjServer\HsjServer\bin\Release\ServerBase.exe.config
+F:\GitHubProject\HsjServer\HsjServer\bin\Release\protobuf-net.xml
+F:\GitHubProject\HsjServer\HsjServer\bin\Release\log4net.xml
+F:\GitHubProject\HsjServer\HsjServer\obj\Release\HsjServer.csprojAssemblyReference.cache
+F:\GitHubProject\HsjServer\HsjServer\obj\Release\HsjServer.csproj.CoreCompileInputs.cache
+F:\GitHubProject\HsjServer\HsjServer\obj\Release\HsjServer.csproj.CopyComplete
+F:\GitHubProject\HsjServer\HsjServer\obj\Release\HsjServer.exe
+F:\GitHubProject\HsjServer\HsjServer\obj\Release\HsjServer.pdb

@@ -8,7 +8,6 @@ using System.Text;
 public static class Debug
 {
     private static ILog m_Log;
-
     static Debug()
     {
         XmlConfigurator.ConfigureAndWatch(new FileInfo(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile));
