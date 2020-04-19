@@ -9,3 +9,14 @@ F:\GitHubProject\HsjServer\ServerBase\obj\Debug\ServerBase.csproj.CopyComplete
 F:\GitHubProject\HsjServer\ServerBase\obj\Debug\ServerBase.exe
 F:\GitHubProject\HsjServer\ServerBase\obj\Debug\ServerBase.pdb
 F:\GitHubProject\HsjServer\ServerBase\bin\Debug\log4net.config
+E:\GitHubProject\HsjServer\ServerBase\bin\Debug\log4net.config
+E:\GitHubProject\HsjServer\ServerBase\bin\Debug\ServerBase.exe.config
+E:\GitHubProject\HsjServer\ServerBase\bin\Debug\ServerBase.exe
+E:\GitHubProject\HsjServer\ServerBase\bin\Debug\ServerBase.pdb
+E:\GitHubProject\HsjServer\ServerBase\bin\Debug\log4net.dll
+E:\GitHubProject\HsjServer\ServerBase\bin\Debug\log4net.xml
+E:\GitHubProject\HsjServer\ServerBase\obj\Debug\ServerBase.csprojAssemblyReference.cache
+E:\GitHubProject\HsjServer\ServerBase\obj\Debug\ServerBase.csproj.CoreCompileInputs.cache
+E:\GitHubProject\HsjServer\ServerBase\obj\Debug\ServerBase.csproj.CopyComplete
+E:\GitHubProject\HsjServer\ServerBase\obj\Debug\ServerBase.exe
+E:\GitHubProject\HsjServer\ServerBase\obj\Debug\ServerBase.pdb

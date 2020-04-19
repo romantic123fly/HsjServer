@@ -12,6 +12,7 @@ namespace HsjServer
     {
         static void Main(string[] args)
         {
+
             ServerSocket.Instance.Init();
             Console.ReadLine();
         }
