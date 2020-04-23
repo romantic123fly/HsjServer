@@ -18,7 +18,6 @@ public class MsgBase
     /// <returns></returns>
     public static byte[] EncodeName(MsgBase msgBase) 
     {
-
         byte[] nameBytes = System.Text.Encoding.UTF8.GetBytes(msgBase.ProtoType.ToString());
         Int16 len = (Int16)nameBytes.Length;
         //定义新的字节数组存储前两位存储协议名长度，后面存储协议名字节内容
@@ -71,6 +70,7 @@ public class MsgBase
             bytes = AES.AESEncrypt(bytes, secret);
             return bytes;
         }
+
     }
 
     /// <summary>

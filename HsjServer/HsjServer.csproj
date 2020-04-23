@@ -36,6 +36,9 @@
     <Reference Include="protobuf-net, Version=2.4.0.0, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
       <HintPath>..\packages\protobuf-net.2.4.6\lib\net40\protobuf-net.dll</HintPath>
     </Reference>
+    <Reference Include="SqlSugar, Version=5.0.0.14, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\sqlSugar.5.0.0.14\lib\SqlSugar.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -49,6 +52,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\SqlServerType.cs" />
+    <Compile Include="Business\UserManager.cs" />
     <Compile Include="NetWork\ByteArray.cs" />
     <Compile Include="NetWork\ClientSocket.cs" />
     <Compile Include="NetWork\MsgHandler.cs" />
@@ -64,6 +69,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MySql\MySql.csproj">
+      <Project>{9ad58e8e-4382-49c5-a8da-3df265d4d684}</Project>
+      <Name>MySql</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ServerBase\ServerBase.csproj">
       <Project>{91ab2993-b980-4238-8077-d21b02208fb0}</Project>
       <Name>ServerBase</Name>

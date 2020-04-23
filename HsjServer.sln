@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HsjServer", "HsjServer\HsjS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerBase", "ServerBase\ServerBase.csproj", "{91AB2993-B980-4238-8077-D21B02208FB0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySql", "MySql\MySql.csproj", "{9AD58E8E-4382-49C5-A8DA-3DF265D4D684}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{91AB2993-B980-4238-8077-D21B02208FB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91AB2993-B980-4238-8077-D21B02208FB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91AB2993-B980-4238-8077-D21B02208FB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AD58E8E-4382-49C5-A8DA-3DF265D4D684}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AD58E8E-4382-49C5-A8DA-3DF265D4D684}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AD58E8E-4382-49C5-A8DA-3DF265D4D684}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AD58E8E-4382-49C5-A8DA-3DF265D4D684}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

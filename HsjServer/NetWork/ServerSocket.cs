@@ -165,7 +165,7 @@ namespace HsjServer.Net
 
             readbuff.ReadIdx = bodyLength + 4;
             readbuff.CheckAndMoveBytes();
-            //继续读取消息
+            //继续读取消息 处理黏包
             if (readbuff.Length > 4)
             {
                 OnReceiveData(clientSocket);
