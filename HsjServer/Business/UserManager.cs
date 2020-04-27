@@ -10,7 +10,6 @@ namespace HsjServer.Business
 {
     public class UserManager : Singleton<UserManager>
     {
-
         public RegisterResult Register(RegisterType registerType,string userName,string pwd )
         {
 			try
