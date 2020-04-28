@@ -10,3 +10,7 @@ F:\GitHubProject\HsjServer\MySql\obj\Debug\netstandard2.0\MySql.csprojAssemblyRe
 F:\GitHubProject\HsjServer\MySql\obj\Debug\netstandard2.0\MySql.AssemblyInfoInputs.cache
 F:\GitHubProject\HsjServer\MySql\obj\Debug\netstandard2.0\MySql.AssemblyInfo.cs
 F:\GitHubProject\HsjServer\MySql\obj\Debug\netstandard2.0\MySql.csproj.CopyComplete
+F:\GitHubProject\HsjServer\MySql\bin\Debug\netstandard2.0\MySql.pdb
+F:\GitHubProject\HsjServer\MySql\obj\Debug\netstandard2.0\MySql.dll
+F:\GitHubProject\HsjServer\MySql\obj\Debug\netstandard2.0\MySql.pdb
+F:\GitHubProject\HsjServer\MySql\obj\Debug\netstandard2.0\MySql.csproj.CoreCompileInputs.cache

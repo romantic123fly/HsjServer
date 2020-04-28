@@ -34,11 +34,11 @@ namespace HsjServer.Net
             Debug.Log(msgTest.ReqContent);
             msgTest.RecContent = "服务器测试发送的数据:aaaaaaaaaaaaaaaa";
             ServerSocket.SendMessage(c, msgTest);
-            //ServerSocket.Send(c, msgTest);
-            //ServerSocket.Send(c, msgTest);
-            //ServerSocket.Send(c, msgTest);
-            //ServerSocket.Send(c, msgTest);
-            //ServerSocket.Send(c, msgTest);
+            ServerSocket.SendMessage(c, msgTest);
+            ServerSocket.SendMessage(c, msgTest);
+            ServerSocket.SendMessage(c, msgTest);
+
+
         }
 
         /// <summary>

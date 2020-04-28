@@ -104,10 +104,14 @@ namespace HsjServer.Net
         {
             ClientSocket clientSocket = m_ClientDic[client];
             ByteArray readBuff = clientSocket.ReadBuff;
-
+            //接受信息，根据信息解析协议，根据协议内容处理消息再下发到客户端
+            int count = 0;
             //如果上一次接收数据刚好占满了1024的数组，
             if (readBuff.Remain <= 0)
             {
+                //数据移动到index =0 位置。
+                OnReceiveData(clientSocket);
+                readBuff.CheckAndMoveBytes();
                 //保证到如果数据长度大于默认长度，扩充数据长度，保证信息的正常接收
                 while (readBuff.Remain <= 0)
                 {
@@ -115,15 +119,28 @@ namespace HsjServer.Net
                     readBuff.ReSize(expandSize * 2);
                 }
             }
-            int count = client.Receive(readBuff.Bytes, readBuff.WriteIdx, readBuff.Remain, 0);
-            if (count <= 0) //代表客户端断开链接了
+            try
+            {
+                count = client.Receive(readBuff.Bytes, readBuff.WriteIdx, readBuff.Remain, 0);
+            }
+            catch (SocketException ex)
+            {
+                Debug.LogError("Receive fali:" + ex);
+                CloseClient(clientSocket);
+                return;
+            }
+
+            //代表客户端断开链接了
+            if (count <= 0)
             {
                 CloseClient(clientSocket);
                 return;
             }
 
             readBuff.WriteIdx += count;
+            //解析我们的信息
             OnReceiveData(clientSocket);
+            readBuff.CheckAndMoveBytes();
         }
 
         /// <summary>
@@ -146,7 +163,7 @@ namespace HsjServer.Net
                 CloseClient(clientSocket);
                 return;
             }
-
+            readbuff.ReadIdx += 4;
             //解析协议体
             int bodyCount = bodyLength - readbuff.Bytes[4] - 2;
 
@@ -163,7 +180,7 @@ namespace HsjServer.Net
             if (mi != null) mi.Invoke(null, o);
             else Debug.LogError("OnReceiveData Invoke fail:" + proto.ToString());
 
-            readbuff.ReadIdx = bodyLength + 4;
+            readbuff.ReadIdx += bodyLength;
             readbuff.CheckAndMoveBytes();
             //继续读取消息 处理黏包
             if (readbuff.Length > 4)

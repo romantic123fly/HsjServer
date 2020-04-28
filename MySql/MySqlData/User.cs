@@ -12,6 +12,7 @@ namespace MySql.MySqlData
         public int Id { get; set; }
         public string  Username { get; set; }
         public string  Password { get; set; }
+        public string   Token { get; set; }
         public DateTime  Logindate { get; set; }
 
         public string Logintype { get; set; }

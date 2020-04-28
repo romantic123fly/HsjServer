@@ -9,7 +9,14 @@ namespace HsjServer.Business
     public enum RegisterType { 
     Phone,
     Mail
-    
+    }
+    public enum LoginType
+    {
+        Phone,
+        Mail,
+        QQ,
+        WeChat,
+        Token,
     }
     public enum RegisterResult
     {
@@ -25,7 +32,7 @@ namespace HsjServer.Business
         Failed,
         AlreadyLogin,
         WrongPwd,
-        UserNotExits,
+        UserNotExist,
         TimeoutToken
     }
 }

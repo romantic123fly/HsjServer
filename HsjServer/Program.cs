@@ -1,4 +1,5 @@
 ﻿using HsjServer.Net;
+using MySql;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace HsjServer
     {
         static void Main(string[] args)
         {
-
+            MySqlManager.Instance.Init();
             ServerSocket.Instance.Init();
             Console.ReadLine();
         }
