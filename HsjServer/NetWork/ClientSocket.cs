@@ -12,6 +12,6 @@ namespace HsjServer.Net
         public Socket Socket { get; set; }
         public long LastPingTime { get; set; }
         public ByteArray ReadBuff = new ByteArray();
-
+        public int UserId { get; set; }
     }
 }

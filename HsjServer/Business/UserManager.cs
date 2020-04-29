@@ -24,23 +24,23 @@ namespace HsjServer.Business
             {
                 int count = MySqlManager.Instance.sqlSugarClient.Queryable<User>().Where(it => it.Username == userName).Count();
                 if (count > 0) return RegisterResult.AlreadyExist;
-                User user = new User();
+                User user1 = new User();
                 switch (registerType)
                 {
                     //不算是手机验证码或者邮箱验证码，再注册之前会有一个协议来申请验证码，申请的验证码生成后在数据库储存一份，然后在注册的时候把客户端传入的验证码与数据库的验证码进行比较，如果不一致，正面注册验证码错误，返回  RegisterResult.WrongCode
                     case RegisterType.Phone:
-                        user.Logintype = LoginType.Phone.ToString();
+                        user1.Logintype = LoginType.Phone.ToString();
                         break;
                     case RegisterType.Mail:
-                        user.Logintype = LoginType.Mail.ToString();
+                        user1.Logintype = LoginType.Mail.ToString();
                         break;
                 }
-                user.Username = userName;
-                user.Password = pwd;
-                user.Token = Guid.NewGuid().ToString();
-                user.Logindate = DateTime.Now;
-                token = user.Token;
-                MySqlManager.Instance.sqlSugarClient.Insertable(user).ExecuteCommand();
+                user1.Username = userName;
+                user1.Password = pwd;
+                user1.Token = Guid.NewGuid().ToString();
+                user1.Logindate = DateTime.Now;
+                token = user1.Token;
+                MySqlManager.Instance.sqlSugarClient.Insertable(user1).ExecuteCommand();
                 return RegisterResult.Success;
             }
             catch (Exception ex)
@@ -61,16 +61,14 @@ namespace HsjServer.Business
                 {
                     case LoginType.Phone:
                     case LoginType.Mail:
-                        user = MySqlManager.Instance.sqlSugarClient.Queryable<User>().Where(it
-                            => it.Username == userName).Single();
+                        user = MySqlManager.Instance.sqlSugarClient.Queryable<User>().Where(it=> it.Username == userName).Single();
                         break;
                     //如果是QQ和微信，在User里面要多存一个Unionid，在这里判断的时候就是it.Unionid == userName
                     case LoginType.QQ:
                     case LoginType.WeChat:
                         break;
                     case LoginType.Token:
-                        user = MySqlManager.Instance.sqlSugarClient.Queryable<User>().Where(it
-                            => it.Username == userName).Single();
+                        user = MySqlManager.Instance.sqlSugarClient.Queryable<User>().Where(it => it.Username == userName).Single();
                         break;
                 }
 

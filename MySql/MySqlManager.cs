@@ -7,7 +7,7 @@ namespace MySql
     public class MySqlManager:Singleton<MySqlManager>
     {
 #if DEBUG
-        private const string connectingStr = "server=localhost;uid=root;pwd=romantic;database=user";
+        private const string connectingStr = "server=localhost;uid=root;pwd=romantic;database=hsj";
 #else
          private const string connectingStr = "server=localhost;uid=hsj;pwd=romantic123456;database=SqlSugar4XTest";
 #endif

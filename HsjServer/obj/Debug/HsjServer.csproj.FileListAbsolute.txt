@@ -56,3 +56,5 @@ F:\GitHubProject\HsjServer\HsjServer\bin\Debug\System.Buffers.xml
 F:\GitHubProject\HsjServer\HsjServer\bin\Debug\System.Memory.xml
 F:\GitHubProject\HsjServer\HsjServer\bin\Debug\System.Numerics.Vectors.xml
 F:\GitHubProject\HsjServer\HsjServer\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+F:\GitHubProject\HsjServer\HsjServer\bin\Debug\Newtonsoft.Json.dll
+F:\GitHubProject\HsjServer\HsjServer\bin\Debug\Newtonsoft.Json.xml

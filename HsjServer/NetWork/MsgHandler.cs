@@ -1,4 +1,5 @@
-﻿using HsjServer.Net;
+﻿using HsjServer.Business;
+using HsjServer.Net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,29 +45,29 @@ namespace HsjServer.Net
         /// <summary>
         /// 处理注册信息
         /// </summary>
-        /// <param name="c"></param>
-        /// <param name="msgBase"></param>
-        //public static void MsgRegister(ClientSocket c, MsgBase msgBase) 
-        //{
-        //    MsgRegister msg = (MsgRegister)msgBase;
-        //    var rst = UserManager.Instance.Register(msg.RegisterType, msg.Account, msg.Password, out string token);
-        //    msg.Result = rst;
-        //    ServerSocket.Send(c, msg);
-        //}
+        /// <param name = "c" ></ param >
+        /// < param name="msgBase"></param>
+        public static void MsgRegister(ClientSocket c, MsgBase msgBase)
+        {
+            MsgRegister msg = (MsgRegister)msgBase;
+            RegisterResult rst = UserManager.Instance.Register(msg.RegisterType, msg.Account, msg.Password, out string token);
+            msg.Result = rst;
+            ServerSocket.SendMessage(c, msg);
+        }
 
         /// <summary>
         /// 处理登录信息
         /// </summary>
         /// <param name="c"></param>
         /// <param name="msgBase"></param>
-        //public static void MsgLogin(ClientSocket c, MsgBase msgBase) 
-        //{
-        //    MsgLogin msg = (MsgLogin)msgBase;
-        //    var rst = UserManager.Instance.Login(msg.LoginType, msg.Account, msg.Password, out int userid, out string token);
-        //    msg.Result = rst;
-        //    msg.Token = token;
-        //    c.UserId = userid;
-        //    ServerSocket.Send(c, msg);
-        //}
+        public static void MsgLogin(ClientSocket c, MsgBase msgBase)
+        {
+            MsgLogin msg = (MsgLogin)msgBase;
+            LoginResult rst = UserManager.Instance.Login(msg.LoginType, msg.Account, msg.Password, out int userid, out string token);
+            msg.Result = rst;
+            msg.Token = token;
+            c.UserId = userid;
+            ServerSocket.SendMessage(c, msg);
+        }
     }
 }

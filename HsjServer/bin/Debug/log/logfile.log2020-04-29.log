@@ -1,0 +1,85 @@
+﻿2020-04-29 14:17:03,472 [1] INFO  Debug - 服务器127.0.0.1:8011启动监听成功 Debug 
+2020-04-29 14:17:15,088 [1] DEBUG Debug - 一个客户端链接：127.0.0.1:8011,当前1个客户端在线！ Debug 
+2020-04-29 14:20:03,199 [1] INFO  Debug - 服务器127.0.0.1:8011启动监听成功 Debug 
+2020-04-29 14:20:11,250 [1] DEBUG Debug - 一个客户端链接：127.0.0.1:8011,当前1个客户端在线！ Debug 
+2020-04-29 14:45:03,227 [1] INFO  Debug - 服务器127.0.0.1:8011启动监听成功 Debug 
+2020-04-29 14:45:08,322 [1] DEBUG Debug - 一个客户端链接：127.0.0.1:8011,当前1个客户端在线！ Debug 
+2020-04-29 14:45:11,953 [1] ERROR Debug - 注册失败：SqlSugar.SqlSugarException: English Message : Connection open error . Authentication to host 'localhost' for user 'root' using method 'caching_sha2_password' failed with message: Unknown database 'user'
+Chinese Message :  连接数据库过程中发生错误，检查服务器是否正常连接字符串是否正确，实在找不到原因请先Google错误信息：Authentication to host 'localhost' for user 'root' using method 'caching_sha2_password' failed with message: Unknown database 'user'.
+   在 SqlSugar.AdoProvider.GetScalar(String sql, SugarParameter[] parameters)
+   在 SqlSugar.AdoProvider.GetInt(String sql, SugarParameter[] parameters)
+   在 SqlSugar.QueryableProvider`1.GetCount()
+   在 SqlSugar.QueryableProvider`1.Count()
+   在 HsjServer.Business.UserManager.Register(RegisterType registerType, String userName, String pwd, String& token) 位置 F:\GitHubProject\HsjServer\HsjServer\Business\UserManager.cs:行号 25 Debug 
+2020-04-29 14:48:15,427 [1] DEBUG Debug - 一个客户端断开链接，当前总连接数：0 Debug 
+2020-04-29 14:51:18,671 [1] INFO  Debug - 服务器127.0.0.1:8011启动监听成功 Debug 
+2020-04-29 14:51:22,492 [1] DEBUG Debug - 一个客户端链接：127.0.0.1:8011,当前1个客户端在线！ Debug 
+2020-04-29 14:51:29,913 [1] ERROR Debug - 注册失败：SqlSugar.SqlSugarException: English Message : Connection open error . Authentication to host 'localhost' for user 'root' using method 'caching_sha2_password' failed with message: Unknown database 'user'
+Chinese Message :  连接数据库过程中发生错误，检查服务器是否正常连接字符串是否正确，实在找不到原因请先Google错误信息：Authentication to host 'localhost' for user 'root' using method 'caching_sha2_password' failed with message: Unknown database 'user'.
+   在 SqlSugar.AdoProvider.GetScalar(String sql, SugarParameter[] parameters)
+   在 SqlSugar.AdoProvider.GetInt(String sql, SugarParameter[] parameters)
+   在 SqlSugar.QueryableProvider`1.GetCount()
+   在 SqlSugar.QueryableProvider`1.Count()
+   在 HsjServer.Business.UserManager.Register(RegisterType registerType, String userName, String pwd, String& token) 位置 F:\GitHubProject\HsjServer\HsjServer\Business\UserManager.cs:行号 25 Debug 
+2020-04-29 14:51:31,962 [1] ERROR Debug - 注册失败：SqlSugar.SqlSugarException: English Message : Connection open error . Authentication to host 'localhost' for user 'root' using method 'caching_sha2_password' failed with message: Unknown database 'user'
+Chinese Message :  连接数据库过程中发生错误，检查服务器是否正常连接字符串是否正确，实在找不到原因请先Google错误信息：Authentication to host 'localhost' for user 'root' using method 'caching_sha2_password' failed with message: Unknown database 'user'.
+   在 SqlSugar.AdoProvider.GetScalar(String sql, SugarParameter[] parameters)
+   在 SqlSugar.AdoProvider.GetInt(String sql, SugarParameter[] parameters)
+   在 SqlSugar.QueryableProvider`1.GetCount()
+   在 SqlSugar.QueryableProvider`1.Count()
+   在 HsjServer.Business.UserManager.Register(RegisterType registerType, String userName, String pwd, String& token) 位置 F:\GitHubProject\HsjServer\HsjServer\Business\UserManager.cs:行号 25 Debug 
+2020-04-29 14:57:47,200 [1] INFO  Debug - 服务器127.0.0.1:8011启动监听成功 Debug 
+2020-04-29 14:57:52,595 [1] DEBUG Debug - 一个客户端链接：127.0.0.1:8011,当前1个客户端在线！ Debug 
+2020-04-29 15:02:52,662 [1] INFO  Debug - 服务器127.0.0.1:8011启动监听成功 Debug 
+2020-04-29 15:03:13,819 [1] DEBUG Debug - 一个客户端链接：127.0.0.1:8011,当前1个客户端在线！ Debug 
+2020-04-29 15:03:18,096 [1] ERROR Debug - 注册失败：MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'hsj.user' doesn't exist
+   在 SqlSugar.AdoProvider.GetScalar(String sql, SugarParameter[] parameters)
+   在 SqlSugar.AdoProvider.GetInt(String sql, SugarParameter[] parameters)
+   在 SqlSugar.QueryableProvider`1.GetCount()
+   在 SqlSugar.QueryableProvider`1.Count()
+   在 HsjServer.Business.UserManager.Register(RegisterType registerType, String userName, String pwd, String& token) 位置 F:\GitHubProject\HsjServer\HsjServer\Business\UserManager.cs:行号 25 Debug 
+2020-04-29 15:05:33,264 [1] INFO  Debug - 服务器127.0.0.1:8011启动监听成功 Debug 
+2020-04-29 15:05:46,557 [1] DEBUG Debug - 一个客户端链接：127.0.0.1:8011,当前1个客户端在线！ Debug 
+2020-04-29 15:05:49,413 [1] ERROR Debug - 注册失败：MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'hsj.user' doesn't exist
+   在 SqlSugar.AdoProvider.GetScalar(String sql, SugarParameter[] parameters)
+   在 SqlSugar.AdoProvider.GetInt(String sql, SugarParameter[] parameters)
+   在 SqlSugar.QueryableProvider`1.GetCount()
+   在 SqlSugar.QueryableProvider`1.Count()
+   在 HsjServer.Business.UserManager.Register(RegisterType registerType, String userName, String pwd, String& token) 位置 F:\GitHubProject\HsjServer\HsjServer\Business\UserManager.cs:行号 25 Debug 
+2020-04-29 15:06:43,353 [1] INFO  Debug - 服务器127.0.0.1:8011启动监听成功 Debug 
+2020-04-29 15:06:49,665 [1] DEBUG Debug - 一个客户端链接：127.0.0.1:8011,当前1个客户端在线！ Debug 
+2020-04-29 15:06:54,344 [1] ERROR Debug - 注册失败：MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'hsj.user' doesn't exist
+   在 SqlSugar.AdoProvider.GetScalar(String sql, SugarParameter[] parameters)
+   在 SqlSugar.AdoProvider.GetInt(String sql, SugarParameter[] parameters)
+   在 SqlSugar.QueryableProvider`1.GetCount()
+   在 SqlSugar.QueryableProvider`1.Count()
+   在 HsjServer.Business.UserManager.Register(RegisterType registerType, String userName, String pwd, String& token) 位置 F:\GitHubProject\HsjServer\HsjServer\Business\UserManager.cs:行号 25 Debug 
+2020-04-29 15:07:12,585 [1] DEBUG Debug - 一个客户端断开链接，当前总连接数：0 Debug 
+2020-04-29 15:17:08,409 [1] INFO  Debug - 服务器127.0.0.1:8011启动监听成功 Debug 
+2020-04-29 15:17:13,430 [1] DEBUG Debug - 一个客户端链接：127.0.0.1:8011,当前1个客户端在线！ Debug 
+2020-04-29 15:18:21,911 [1] DEBUG Debug - 一个客户端断开链接，当前总连接数：0 Debug 
+2020-04-29 15:39:21,778 [1] INFO  Debug - 服务器127.0.0.1:8011启动监听成功 Debug 
+2020-04-29 15:39:30,798 [1] DEBUG Debug - 一个客户端链接：127.0.0.1:8011,当前1个客户端在线！ Debug 
+2020-04-29 15:40:33,540 [1] DEBUG Debug - Ping Close127.0.0.1:8351 Debug 
+2020-04-29 15:40:33,547 [1] DEBUG Debug - 一个客户端断开链接，当前总连接数：0 Debug 
+2020-04-29 15:46:01,639 [1] INFO  Debug - 服务器127.0.0.1:8011启动监听成功 Debug 
+2020-04-29 15:46:17,837 [1] DEBUG Debug - 一个客户端链接：127.0.0.1:8011,当前1个客户端在线！ Debug 
+2020-04-29 15:47:44,500 [1] DEBUG Debug - Ping Close127.0.0.1:8749 Debug 
+2020-04-29 15:47:44,500 [1] DEBUG Debug - 一个客户端断开链接，当前总连接数：0 Debug 
+2020-04-29 15:50:52,563 [1] INFO  Debug - 服务器127.0.0.1:8011启动监听成功 Debug 
+2020-04-29 15:51:46,166 [1] DEBUG Debug - 一个客户端链接：127.0.0.1:8011,当前1个客户端在线！ Debug 
+2020-04-29 15:52:06,401 [1] DEBUG Debug - 一个客户端断开链接，当前总连接数：0 Debug 
+2020-04-29 15:53:20,376 [1] INFO  Debug - 服务器127.0.0.1:8011启动监听成功 Debug 
+2020-04-29 15:53:24,928 [1] DEBUG Debug - 一个客户端链接：127.0.0.1:8011,当前1个客户端在线！ Debug 
+2020-04-29 15:54:05,500 [1] DEBUG Debug - 一个客户端断开链接，当前总连接数：0 Debug 
+2020-04-29 16:04:56,431 [1] INFO  Debug - 服务器127.0.0.1:8011启动监听成功 Debug 
+2020-04-29 16:05:06,300 [1] DEBUG Debug - 一个客户端链接：127.0.0.1:8011,当前1个客户端在线！ Debug 
+2020-04-29 16:05:33,179 [1] DEBUG Debug - Ping Close127.0.0.1:9819 Debug 
+2020-04-29 16:05:33,179 [1] DEBUG Debug - 一个客户端断开链接，当前总连接数：0 Debug 
+2020-04-29 16:08:12,033 [1] INFO  Debug - 服务器127.0.0.1:8011启动监听成功 Debug 
+2020-04-29 16:08:17,710 [1] DEBUG Debug - 一个客户端链接：127.0.0.1:8011,当前1个客户端在线！ Debug 
+2020-04-29 16:15:12,573 [1] INFO  Debug - 服务器127.0.0.1:8011启动监听成功 Debug 
+2020-04-29 16:15:16,930 [1] DEBUG Debug - 一个客户端链接：127.0.0.1:8011,当前1个客户端在线！ Debug 
+2020-04-29 16:15:43,290 [1] DEBUG Debug - 一个客户端断开链接，当前总连接数：0 Debug 
+2020-04-29 16:16:26,287 [1] DEBUG Debug - 一个客户端链接：127.0.0.1:8011,当前1个客户端在线！ Debug 
+2020-04-29 16:16:39,891 [1] DEBUG Debug - 一个客户端断开链接，当前总连接数：0 Debug 
