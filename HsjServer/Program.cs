@@ -13,7 +13,7 @@ namespace HsjServer
     {
         static void Main(string[] args)
         {
-            MySqlManager.Instance.Init();
+            //MySqlManager.Instance.Init();
             ServerSocket.Instance.Init();
             Console.ReadLine();
         }
