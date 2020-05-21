@@ -13,7 +13,7 @@ namespace HsjServer.Net
 #if DEBUG
         private string m_IpStr = "127.0.0.1";
 #else
-        private string m_IpStr = "127.0.0.1";
+        private string m_IpStr = "106.12.218.138";
 #endif
         private const int m_Port = 8011;
         public static long m_PingInterval = 5;
