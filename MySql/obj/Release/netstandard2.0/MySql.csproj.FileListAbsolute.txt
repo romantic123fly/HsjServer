@@ -1,0 +1,16 @@
+F:\GitHubProject\HsjServer\MySql\bin\Release\netstandard2.0\log4net.config
+F:\GitHubProject\HsjServer\MySql\bin\Release\netstandard2.0\MySql.deps.json
+F:\GitHubProject\HsjServer\MySql\bin\Release\netstandard2.0\MySql.dll
+F:\GitHubProject\HsjServer\MySql\bin\Release\netstandard2.0\MySql.pdb
+F:\GitHubProject\HsjServer\MySql\bin\Release\netstandard2.0\ServerBase.exe
+F:\GitHubProject\HsjServer\MySql\bin\Release\netstandard2.0\log4net.dll
+F:\GitHubProject\HsjServer\MySql\bin\Release\netstandard2.0\ServerBase.pdb
+F:\GitHubProject\HsjServer\MySql\bin\Release\netstandard2.0\ServerBase.exe.config
+F:\GitHubProject\HsjServer\MySql\bin\Release\netstandard2.0\log4net.xml
+F:\GitHubProject\HsjServer\MySql\obj\Release\netstandard2.0\MySql.csprojAssemblyReference.cache
+F:\GitHubProject\HsjServer\MySql\obj\Release\netstandard2.0\MySql.csproj.CoreCompileInputs.cache
+F:\GitHubProject\HsjServer\MySql\obj\Release\netstandard2.0\MySql.AssemblyInfoInputs.cache
+F:\GitHubProject\HsjServer\MySql\obj\Release\netstandard2.0\MySql.AssemblyInfo.cs
+F:\GitHubProject\HsjServer\MySql\obj\Release\netstandard2.0\MySql.csproj.CopyComplete
+F:\GitHubProject\HsjServer\MySql\obj\Release\netstandard2.0\MySql.dll
+F:\GitHubProject\HsjServer\MySql\obj\Release\netstandard2.0\MySql.pdb
