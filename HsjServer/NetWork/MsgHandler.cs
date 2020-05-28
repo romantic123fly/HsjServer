@@ -17,6 +17,7 @@ namespace HsjServer.Net
         /// <param name="msgBase"></param>
         public static void MsgSecret(ClientSocket c, MsgBase msgBase) 
         {
+
             MsgSecret msgSecret = (MsgSecret)msgBase;
             msgSecret.Srcret = ServerSocket.SecretKey;
             ServerSocket.SendMessage(c, msgSecret);
