@@ -23,6 +23,7 @@ namespace MySql
                 InitKeyType = InitKeyType.Attribute,
             }) ;
 
+
 #if DEBUG
             sqlSugarClient.Aop.OnLogExecuting = (sql,pars) =>
             {
